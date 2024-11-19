@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <style>
+        body {
+            background-color: green;
+        }
+    </style>
     <title>Rasheed Loves to Help</title>
 </head>
 <body>
-    <h1>Tell Rasheed How much that car or house is worth now</h1>
+    
+    <h1>Tell Rasheed How much the car or house you want is worth now</h1>
     <p>I don't care about your data none is stored here</p>
     <form id="calculatorForm">
         <label>Enter the Present Value ($):</label><br>
@@ -18,7 +25,7 @@
         <label>Enter Down Payment ($):</label><br>
         <input type="number" id="downPayment" placeholder="Optional"><br><br>
 
-        <button type="button" onclick="rasheedsBrain()">Calculate</button>
+        <button type="button" onclick="rasheedsBrain()">Let's See What it is</button>
     </form>
     <p id="result"></p>
 
@@ -31,7 +38,7 @@
 
             // Check if required inputs are valid
             if (isNaN(presentValue) || isNaN(interestRate)) {
-                document.getElementById("result").innerText = "Please enter valid numbers.";
+                document.getElementById("result").innerText = "You didn't enter anything for me to do .";
                 return;
             }
 
@@ -39,7 +46,7 @@
             var futureValue = presentValue * (1 + interestRate / 100) + downPayment;
 
             // Display the result
-            document.getElementById("result").innerText = "Rasheed says you will be paying : $" + futureValue.toFixed(2) + " once you finish paying it off . DONT GET BAMBOZLED";
+            document.getElementById("result").innerText = "Rasheed says you will be paying : $" + futureValue.toFixed(2) + " once you finish paying it off . DONT GET RIPPED";
             
         }
     </script>
