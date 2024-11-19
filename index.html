@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rasheed Loves to Help</title>
+</head>
+<body>
+    <h1>Tell Rasheed How much that car or house is worth now</h1>
+    <p>I don't care about your data none is stored here</p>
+    <form id="calculatorForm">
+        <label>Enter the Present Value ($):</label><br>
+        <input type="number" id="presentValue" placeholder="$0" required>
+        <br><br>
+
+        <label>Enter the Interest Rate (%):</label><br>
+        <input type="number" id="interestRate" placeholder="0.0%" required>
+        <br><br>
+
+        <label>Enter Down Payment ($):</label><br>
+        <input type="number" id="downPayment" placeholder="Optional"><br><br>
+
+        <button type="button" onclick="rasheedsBrain()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+  
+    <script>
+        function rasheedsBrain() {
+            var presentValue = parseFloat(document.getElementById("presentValue").value);
+            var interestRate = parseFloat(document.getElementById("interestRate").value);
+            var downPayment = parseFloat(document.getElementById("downPayment").value) || 0;
+
+            // Check if required inputs are valid
+            if (isNaN(presentValue) || isNaN(interestRate)) {
+                document.getElementById("result").innerText = "Please enter valid numbers.";
+                return;
+            }
+
+            // Calculate the future value
+            var futureValue = presentValue * (1 + interestRate / 100) + downPayment;
+
+            // Display the result
+            document.getElementById("result").innerText = "Rasheed says you will be paying : $" + futureValue.toFixed(2) + " once you finish paying it off . DONT GET BAMBOZLED";
+            
+        }
+    </script>
+</body>
+</html>
+    
+
+    
+
